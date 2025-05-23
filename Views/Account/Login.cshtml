@@ -1,0 +1,190 @@
+﻿@model schoool_Management.Models.LoginModel
+
+
+<style>
+    .login-section {
+        background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    }
+
+    .login-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+    }
+
+    .login-btn {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        background-color: #1976d2;
+        color: #fff;
+        transition: 0.3s ease-in-out;
+    }
+
+        .login-btn:hover {
+            background-color: #0d47a1;
+        }
+
+    .confirm-btn {
+        margin-left: 10px;
+        background-color: #fbc02d;
+        color: #000;
+    }
+
+        .confirm-btn:hover {
+            background-color: #f9a825;
+            color: #fff;
+        }
+
+    .forgot-link {
+        color: #1565c0;
+        font-size: 0.95rem;
+    }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+    .form-label {
+        font-weight: 500;
+    }
+
+    .form-control-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+</style>
+
+<section class="vh-100 login-section d-flex align-items-center">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                     class="img-fluid" alt="Login Image">
+            </div>
+
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 login-card">
+                <h4 class="mb-4 text-center">Login to Your Account</h4>
+
+                <form asp-action="Login">
+                    <!-- Email input -->
+                    <div class="form-outline mb-3">
+                        <label asp-for="Email" class="form-label" for="form3Example3">Email Address</label>
+                        <input asp-for="Email" type="email" class="form-control form-control-lg" id="form3Example3" placeholder="Enter your email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <label asp-for="Password" class="form-label" for="form3Example4">Password</label>
+                        <input asp-for="Password" type="password" class="form-control form-control-lg" id="form3Example4" placeholder="Enter your password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <p class="text-danger">@ViewBag.Error</p>
+                    }
+
+                    <!-- Remember me -->
+                    <div class="form-check mb-3">
+                        <input asp-for="RememberMe" class="form-check-input" type="checkbox" id="rememberMe" />
+                        <label class="form-check-label" for="rememberMe">
+                            Remember me
+                        </label>
+                    </div>
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="alert alert-danger">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn login-btn btn-lg">Login</button>
+                        @* <a class="btn confirm-btn btn-lg"
+                           asp-controller="Teacher"
+                           asp-action="ResendConfirmationEmail"
+                           asp-route-IsResend="false">Confirm Email</a> *@
+                    </div>
+
+                    <!-- Forgot password -->
+                    <div class="mt-3 text-end">
+                        <a asp-controller="Account" asp-action="ForgotPassword" class="forgot-link">
+                            Forgot Password?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    window.onload = function () {
+        const savedCredentials = JSON.parse(localStorage.getItem("credentials") || "[]");
+        const emailInput = document.getElementById("form3Example3");
+        const passwordInput = document.getElementById("form3Example4");
+        const dropdown = document.createElement("ul");
+
+        dropdown.style.position = "absolute";
+        dropdown.style.border = "1px solid #ccc";
+        dropdown.style.backgroundColor = "#fff";
+        dropdown.style.listStyle = "none";
+        dropdown.style.padding = "0";
+        dropdown.style.margin = "0";
+        dropdown.style.width = emailInput.offsetWidth + "px";
+        dropdown.style.display = "none";
+        dropdown.style.zIndex = "1000";
+
+        emailInput.parentNode.appendChild(dropdown);
+
+        emailInput.addEventListener("focus", function () {
+            dropdown.innerHTML = ""; 
+
+            savedCredentials.forEach(cred => {
+                const item = document.createElement("li");
+                item.textContent = cred.email;
+                item.style.padding = "8px";
+                item.style.cursor = "pointer";
+
+                item.addEventListener("mouseover", () => item.style.backgroundColor = "#f0f0f0");
+                item.addEventListener("mouseout", () => item.style.backgroundColor = "#fff");
+
+                item.addEventListener("click", function () {
+                    emailInput.value = cred.email;
+                    passwordInput.value = cred.password;
+                    dropdown.style.display = "none";
+                });
+
+                dropdown.appendChild(item);
+            });
+
+            dropdown.style.display = savedCredentials.length ? "block" : "none";
+        });
+        emailInput.addEventListener("blur", function () {
+            setTimeout(() => dropdown.style.display = "none", 200);
+        });
+
+        document.querySelector("form").addEventListener("submit", function () {
+            const rememberMe = document.getElementById("rememberMe").checked;
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            if (rememberMe) {
+                if (!savedCredentials.find(cred => cred.email === email)) {
+                    savedCredentials.push({ email, password });
+                    localStorage.setItem("credentials", JSON.stringify(savedCredentials));
+                }
+            }
+        });
+    };
+</script>
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+﻿@model schoool_Management.Models.ViewModels.CourseCreateViewModel
+
+@{
+    ViewData["Title"] = "Edit Course";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg rounded-3">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Edit Course</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Price" class="form-label"></label>
+                            <input asp-for="Price" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label">Current Image</label><br />
+                            @if (!string.IsNullOrEmpty(Model.ExistingImageName))
+                            {
+                                <img src="~/images/@Model.ExistingImageName" alt="Course Image" class="img-thumbnail mb-2" style="max-width: 200px;" />
+                                <div class="form-check">
+                                    <input asp-for="RemoveImage" class="form-check-input" type="checkbox" />
+                                    <label asp-for="RemoveImage" class="form-check-label">Remove this image</label>
+                                </div>
+                            }
+                            else
+                            {
+                                <p class="text-muted">No image available.</p>
+                            }
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ImageFile" class="form-label">Change Image</label>
+                            <input asp-for="ImageFile" type="file" class="form-control" />
+                            <small class="text-muted">Leave this empty to keep the existing image.</small>
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        </div>
+
+
+                        <input type="hidden" asp-for="ExistingImageName" />
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success px-4">Save</button>
+                            <a asp-action="Index" asp-controller="Teacher" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

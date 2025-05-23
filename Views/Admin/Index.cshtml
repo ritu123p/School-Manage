@@ -1,0 +1,118 @@
+﻿@{
+    var teachers = ViewData["Teachers"] as List<schoool_Management.Models.TeacherModel>;
+    var students = ViewData["Students"] as List<schoool_Management.Models.StudentModel>;
+}
+
+<style>
+    .section-header {
+        background: linear-gradient(to right, #42a5f5, #7e57c2);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
+    }
+
+    .styled-table {
+        background-color: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+        .styled-table thead {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .action-btns .btn {
+        margin-right: 8px;
+    }
+
+    .create-btn {
+        margin-top: 10px;
+        background: #4caf50;
+        border: none;
+        color: white;
+    }
+
+        .create-btn:hover {
+            background: #388e3c;
+        }
+</style>
+
+<div class="container mt-4">
+    <!-- Teachers Section -->
+    <div class="section-header d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Teachers</h4>
+        <a asp-action="Register" asp-controller="Teacher" class="btn create-btn">+ Add Teacher</a>
+    </div>
+
+    <table class="table styled-table table-bordered">
+        <thead>
+            <tr>
+                @* <th>ID</th> *@
+                <th>Name</th>
+                <th>Email</th>
+                <th>Experience</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var teacher in teachers)
+            {
+                <tr>
+                    @* <td>@teacher.Id</td> *@
+                    <td>@teacher.FullName</td>
+                    <td>@teacher.Email</td>
+                    <td>@teacher.Experience years</td>
+                    <td>@teacher.Gender</td>
+                    <td class="action-btns">
+                        <a asp-action="TeacherEdit" asp-route-id="@teacher.Id" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="TeacherDelete" asp-route-id="@teacher.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Students Section -->
+    <div class="section-header d-flex justify-content-between align-items-center mt-5">
+        <h4 class="mb-0">Students List</h4>
+        <a asp-action="Register" asp-controller="Student" class="btn create-btn">+ Add Student</a>
+    </div>
+
+    <table class="table styled-table table-bordered">
+        <thead>
+            <tr>
+                @* <th>ID</th> *@
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in students)
+            {
+                <tr>
+                    @* <td>@student.Id</td> *@
+                    <td>@student.FullName</td>
+                    <td>@student.RollNo</td>
+                    <td>@student.Email</td>
+                    <td>@student.Gender</td>
+                    <td class="action-btns">
+                        <a asp-action="Edit" asp-route-id="@student.Id" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@student.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,152 @@
+﻿@model schoool_Management.Models.ViewModels.CourseCreateViewModel
+
+<style>
+    .course-form-section {
+        background: linear-gradient(to right, #e3f2fd, #bbdefb);
+        padding: 60px 0;
+    }
+
+    .course-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+    }
+
+    .form-label {
+        font-weight: 500;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 0.6rem 1rem;
+    }
+
+    .btn-submit {
+        background-color: #1976d2;
+        color: #fff;
+        transition: 0.3s ease-in-out;
+    }
+
+        .btn-submit:hover {
+            background-color: #0d47a1;
+        }
+
+    .form-header {
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #0d47a1;
+    }
+</style>
+
+<section class="course-form-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="course-card">
+                    <h4 class="text-center form-header">Create New Course</h4>
+
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-3">
+                            <label asp-for="Price" class="form-label"></label>
+                            <input asp-for="Price" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+
+                        <!-- Image -->
+                        <div class="mb-4">
+                            <label for="ImageFile" class="form-label">Upload Image(Optional)</label>
+                            <input type="file" name="ImageFile" class="form-control" />
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-submit btn-lg px-4">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            console.log("jQuery Loaded: Validation Script Running");
+
+
+
+
+                    $("#Name").on("input blur", function () {
+            let nameValue = $(this).val().trim();
+            let nameRegex = /^[A-Za-z\s]+$/;
+
+            if (nameValue.length < 3 || nameValue.length > 50) {
+                $(this).addClass("is-invalid").removeClass("is-valid");
+                $("#Name").text("Name must be between 3 and 50 characters.");
+            } else if (!nameRegex.test(nameValue)) {
+                // $(this).addClass("is-invalid").removeClass("is-valid");
+                $("#Name").text("Name can only contain letters and spaces.");
+            } else {
+                $(this).addClass("is-valid").removeClass("is-invalid");
+                $("#Name").text("");
+            }
+        });
+
+
+        //  $("#Description").on("input blur", function () {
+        //     let nameValue = $(this).val().trim();
+        //     let nameRegex = /^[A-Za-z\s]+$/;
+
+        //     if (nameValue.length < 3 || nameValue.length > 50) {
+        //         $(this).addClass("is-invalid").removeClass("is-valid");
+        //         $("#Description").text("Description can only contain letters and spaces.");
+        //     } else if (!nameRegex.test(nameValue)) {
+        //         $(this).addClass("is-invalid").removeClass("is-valid");
+        //         $("#Description").text("Description can only contain letters and spaces.");
+        //     } else {
+        //         $(this).addClass("is-valid").removeClass("is-invalid");
+        //         $("#Description").text("");
+        //     }
+        // });
+
+
+
+            $("#Price").on("input blur", function () {
+                let phoneValue = $(this).val().trim();
+                let phoneRegex = /^[0-9]\d{0,5}$/;
+                if (!phoneRegex.test(phoneValue)) {
+                    $(this).addClass("is-invalid").removeClass("is-valid");
+                    $("#Price").text("Enter a number");
+                } else {
+                    $(this).addClass("is-valid").removeClass("is-invalid");
+                    $("#Price").text("");
+                }
+            });
+        });
+
+
+    </script>
+}

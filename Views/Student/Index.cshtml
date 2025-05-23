@@ -1,0 +1,274 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using schoool_Management.Models
+@inject UserManager<ApplicationUser> UserManager
+
+@model List<CourseModel>
+@{
+    ViewData["Title"] = "Courses";
+    var user = await UserManager.GetUserAsync(User);
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<style>
+    body {
+        background: linear-gradient(to right, #e3f2fd, #fce4ec);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-header {
+        font-weight: 700;
+        color: #0d47a1;
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+
+    .add-course-btn {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+        background-color: #1976d2;
+        border-color: #1976d2;
+        padding: 0.6rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+    }
+
+    .course-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .course-card {
+        width: 20rem;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: white;
+    }
+
+        .course-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+    .course-img {
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        color: #1565c0;
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        color: #616161;
+        margin-bottom: 0.75rem;
+    }
+
+    .teacher-info {
+        font-size: 0.9rem;
+        color: #757575;
+        margin-top: 0.5rem;
+    }
+
+    .btn-warning,
+    .btn-danger {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 25px;
+        font-weight: 500;
+    }
+
+    .modal-content {
+        border-radius: 20px;
+    }
+
+    .modal-header {
+        background: linear-gradient(to right, #42a5f5, #7e57c2);
+        color: white;
+        border-bottom: none;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .modal-footer {
+        border-top: none;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .modal-body h5 {
+        font-weight: 700;
+        color: #0d47a1;
+    }
+
+    .modal-body p,
+    .modal-body ul li {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    #courseDetails ul {
+        padding-left: 1.5rem;
+    }
+
+        #courseDetails ul li::marker {
+            color: #42a5f5;
+        }
+
+    .btn-outline-primary,
+    .btn-success {
+        border-radius: 25px;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+    }
+
+    .btn-success {
+        background-color: #388e3c;
+        border-color: #388e3c;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #1976d2;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background-color: #2e7d32;
+    }
+</style>
+
+
+<div class="container mt-4">
+    <h2 class="page-header">Available Courses</h2>
+
+    @if (isAdmin)
+    {
+        <div class="add-course-btn">
+            <a class="btn btn-primary" href="/Course/Create">+ Add New Course</a>
+        </div>
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="course-container">
+            @foreach (var course in Model)
+            {
+                <div class="card course-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#courseModal"
+                     data-course-id="@course.Id"
+                     data-course-name="@course.Name"
+                     data-course-description="@course.Description"
+                     data-course-experience="@course.Teacher?.Experience"
+                     data-course-price="@course.Price"
+                     data-course-teacher="@course.Teacher?.FullName"
+                     data-course-image="@course.ImageName">
+                    <img src="~/images/@course.ImageName" class="card-img-top course-img" alt="Course image">
+                    <div class="card-body">
+                        <h5 class="card-title">@course.Name</h5>
+                        <p class="card-text">@course.Description</p>
+                        <p class="text-primary fw-bold">₹@course.Price</p>
+                        @if (course.Teacher?.FullName != null)
+                        {
+                            <p class="teacher-info">Teacher: @course.Teacher.FullName</p>
+                        }
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Enroll" asp-controller="Course" asp-route-id="@course.Id" class="btn gradient-custom-4 btn btn-warning">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No courses available.</p>
+    }
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg rounded-4">
+            <div class="modal-header bg-primary text-white rounded-top-4">
+                <h5 class="modal-title fw-bold" id="courseModalLabel">Course Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div id="courseDetails" class="text-secondary">
+                    <!-- Dynamic content will be injected -->
+                </div>
+            </div>
+            <div class="modal-footer bg-light rounded-bottom-4">
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                <a href="#" id="enrollButton" class="btn btn-success">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var courseModal = document.getElementById('courseModal');
+        courseModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+
+            var courseId = button.getAttribute('data-course-id');
+            var courseName = button.getAttribute('data-course-name');
+            var courseDescription = button.getAttribute('data-course-description');
+            var TeacherExperience = button.getAttribute('data-course-experience');
+            var coursePrice = button.getAttribute('data-course-price');
+            var courseTeacher = button.getAttribute('data-course-teacher');
+            var courseImage = button.getAttribute('data-course-image');
+
+            var courseDetailsDiv = document.getElementById('courseDetails');
+            courseDetailsDiv.innerHTML = `
+                <div class="text-center mb-3">
+                    <img src="/images/${courseImage}" class="img-fluid rounded" style="max-height: 300px;" alt="Course Image">
+                </div>
+                <h5 class="text-primary">${courseName}</h5>
+                <p>${courseDescription}</p>
+                <p class="fw-bold text-success">Price: ₹${coursePrice}</p>
+                ${courseTeacher ? `<p class="text-muted">Teacher: ${courseTeacher}</p>` : ''}
+                ${TeacherExperience ? `<p class="text-muted">Experience: ${TeacherExperience} years</p>` : ''}
+
+                <hr/>
+                <h6>Course Highlights:</h6>
+                <ul>
+                    <li>Comprehensive syllabus designed by industry experts</li>
+                    <li>Interactive live sessions and real-world projects</li>
+                    <li>Access to recorded lectures and study materials</li>
+                    <li>Certificate on successful completion</li>
+                </ul>
+                <hr/>
+                <h6>What you'll learn</h6>
+                <ul>
+                    <li>Understand the APIs available by WhatsApp Cloud</li>
+                    <li>Use WhatsApp Cloud APIs from Postman</li>
+                    <li>Understand the structure of each message type</li>
+                    <li>Create an application with Node.js</li>
+                    <li>Create a user-bot interaction use case</li>
+                </ul>
+                <p class="mt-3"><em>Enroll now and start your learning journey with us!</em></p>
+            `;
+
+            var enrollButton = document.getElementById('enrollButton');
+            enrollButton.href = `/Course/Enroll/${courseId}`;
+        });
+    </script>
+}

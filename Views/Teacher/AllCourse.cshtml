@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<CourseModel>
+
+<style>
+    .course-card {
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+</style>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center text-primary">Available Courses</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+            @foreach (var course in Model)
+            {
+                <div class="card shadow course-card" style="width: 18rem; border-radius: 15px;"
+                     data-bs-toggle="modal" data-bs-target="#courseModal"
+                     data-course-id="@course.Id" data-course-name="@course.Name">
+                    <img src="~/images/@course.ImageName" class="card-img-top" style="height: 12rem; object-fit: cover;" alt="Course Image">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@course.Name</h5>
+                        <p class="card-text">@course.Description</p>
+                        <p class="text-success fw-bold">₹@course.Price</p>
+                        @if (course.Teacher?.FullName != null)
+                        {
+                            <p class="text-muted">Teacher: @course.Teacher.FullName</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-muted">No courses available at the moment.</p>
+    }
+</div>
+
+<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModalLabel">Students Enrolled</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="studentList">                                                                                                                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var courseModal = document.getElementById('courseModal');
+        courseModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var courseId = button.getAttribute('data-course-id');
+            var courseName = button.getAttribute('data-course-name');
+            var modalTitle = courseModal.querySelector('.modal-title');
+            var studentListDiv = courseModal.querySelector('#studentList');
+
+            modalTitle.textContent = 'Students Registered for ' + courseName;
+            studentListDiv.innerHTML = '<p class="text-muted">Loading students...</p>';
+
+            fetch('/Course/GetStudentsByCourseId/' + courseId)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        var html = '<ul class="list-group">';
+                        data.forEach(function (student) {
+                            html += '<li class="list-group-item">' + student.fullName + '</li>';
+                        });
+                        html += '</ul>';
+                        studentListDiv.innerHTML = html;
+                    } else {
+                        studentListDiv.innerHTML = '<p class="text-muted">No students registered yet.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching students:', error);
+                    studentListDiv.innerHTML = '<p class="text-danger">Failed to load students.</p>';
+                });
+        });
+    </script>
+}
+

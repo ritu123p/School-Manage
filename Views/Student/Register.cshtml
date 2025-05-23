@@ -1,0 +1,221 @@
+﻿@model schoool_Management.Models.StudentRegisterViewModel
+
+<style>
+    .form-control-sm-custom {
+        height: calc(1.8em + 0.75rem + 2px);
+        font-size: 0.9rem;
+        padding: 0.375rem 0.75rem;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .gradient-custom-3 {
+        background: linear-gradient(to right, #667eea, #764ba2);
+    }
+
+    .gradient-custom-4 {
+        background: linear-gradient(to right, #43cea2, #185a9d);
+        color: white;
+    }
+
+        .gradient-custom-4:hover {
+            background: linear-gradient(to right, #34c6ab, #1570c7);
+            color: white;
+        }
+
+    label {
+        font-weight: 500;
+    }
+</style>
+
+<section class="d-flex justify-content-center align-items-center h-100 gradient-custom-3 py-5">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card">
+                    <div class="card-body p-md-5 text-black">
+                        <h3 class="mb-4 text-uppercase text-center">Student Registration</h3>
+
+                        <form asp-action="Register">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="mb-3">
+                                <label asp-for="FullName" class="form-label">Full Name</label>
+                                <input asp-for="FullName" type="text" class="form-control form-control-sm-custom" />
+                                <span asp-validation-for="FullName" id="nameError" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Email" class="form-label">Email ID</label>
+                                <input asp-for="Email" type="email" class="form-control form-control-sm-custom" />
+                                <span asp-validation-for="Email" id="emailError" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="RollNo" class="form-label">Roll No</label>
+                                <input asp-for="RollNo" type="number" class="form-control form-control-sm-custom" />
+                                <span asp-validation-for="RollNo" id="rollError" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Gender" class="form-label">Gender</label>
+                                <select asp-for="Gender" class="form-control form-control-sm-custom">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span asp-validation-for="Gender" id="genderError" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Password" class="form-label">Password</label>
+                                <input asp-for="Password" type="password" class="form-control form-control-sm-custom" />
+                                <span asp-validation-for="Password" id="passwordError" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                                <input asp-for="ConfirmPassword" type="password" class="form-control form-control-sm-custom" />
+                                <span asp-validation-for="ConfirmPassword" id="confirmPasswordError" class="text-danger"></span>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn gradient-custom-4 btn-lg">Submit Form</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            console.log("jQuery Loaded: Validation Script Running");
+
+
+
+
+                    $("#FullName").on("input blur", function () {
+            let nameValue = $(this).val().trim();
+            let nameRegex = /^[A-Za-z\s]+$/;
+
+            if (nameValue.length < 3 || nameValue.length > 50) {
+                $(this).addClass("is-invalid").removeClass("is-valid");
+                $("#nameError").text("Name must be between 3 and 50 characters.");
+            } else if (!nameRegex.test(nameValue)) {
+                $(this).addClass("is-invalid").removeClass("is-valid");
+                $("#nameError").text("Name can only contain letters and spaces.");
+            } else {
+                $(this).addClass("is-valid").removeClass("is-invalid");
+                $("#nameError").text("");
+            }
+        });
+
+
+            // Validate Email
+            $("#Email").on("input blur", function () {
+                let emailValue = $(this).val().trim();
+                let emailRegex = /^[\w.-]+@@([\w-]+\.)+[\w-]{2,4}$/;
+                if (!emailRegex.test(emailValue)) {
+                    $(this).addClass("is-invalid").removeClass("is-valid");
+                    $("#emailError").text("Enter a valid email address.");
+                } else {
+                    $(this).addClass("is-valid").removeClass("is-invalid");
+                    $("#emailError").text("");
+                }
+            });
+
+
+            $("#RollNo").on("input blur", function () {
+                let phoneValue = $(this).val().trim();
+                let phoneRegex = /^[0-9]\d{0,5}$/;
+                if (!phoneRegex.test(phoneValue)) {
+                    $(this).addClass("is-invalid").removeClass("is-valid");
+                    $("#rollError").text("Enter a number");
+                } else {
+                    $(this).addClass("is-valid").removeClass("is-invalid");
+                    $("#rollError").text("");
+                }
+            });
+
+            $("#Gender").on("input blur", function () {
+            let nameValue = $(this).val().trim();
+            let nameRegex = /^[A-Za-z\s]+$/; 
+
+            if (nameValue.length < 3 || nameValue.length > 50) {
+                $(this).addClass("is-invalid").removeClass("is-valid");
+                $("#genderError").text("Invalid Gender");
+            } else if (!nameRegex.test(nameValue)) {
+                $(this).addClass("is-invalid").removeClass("is-valid");
+                $("#genderError").text("Invalid Gender");
+            } else {
+                $(this).addClass("is-valid").removeClass("is-invalid");
+                $("#genderError").text("");
+            }
+        });
+
+            // Validate Password
+            function validatePassword() {
+                let password = $("#Password").val();
+                let passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$/;
+
+                if (!passwordRegex.test(password)) {
+                    $("#Password").addClass("is-invalid").removeClass("is-valid");
+                    $("#passwordError").text("Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.");
+                } else {
+                    $("#Password").addClass("is-valid").removeClass("is-invalid");
+                    $("#passwordError").text("");
+                }
+            }
+
+            $("#Password").on("input blur", validatePassword);
+
+            // Validate Confirm Password
+            function validatePasswordsMatch() {
+                let password = $("#Password").val();
+                let confirmPassword = $("#ConfirmPassword").val();
+
+                if (password !== confirmPassword || confirmPassword.trim() === "") {
+                    $("#ConfirmPassword").addClass("is-invalid").removeClass("is-valid");
+                    $("#confirmPasswordError").text("Passwords do not match!");
+                } else {
+                    $("#ConfirmPassword").addClass("is-valid").removeClass("is-invalid");
+                    $("#confirmPasswordError").text("");
+                }
+            }
+
+            $("#Password, #ConfirmPassword").on("input blur", validatePasswordsMatch);
+
+            // Prevent auto-valid tick marks on load
+            $("#signup-form input").removeClass("is-valid is-invalid");
+
+            // Validate on submit
+            $("#signup-form").on("submit", function (event) {
+                validatePassword();
+                validatePasswordsMatch();
+
+                if ($(".is-invalid").length > 0) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                $(this).addClass("was-validated");
+            });
+        });
+
+
+    </script>
+}

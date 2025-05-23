@@ -1,0 +1,48 @@
+﻿@model schoool_Management.Models.EnrollViewModel
+
+@{
+    ViewData["Title"] = "Enroll";
+}
+
+<h1 class="text-center mt-4">@ViewData["Title"]</h1>
+
+<form asp-action="Enroll" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+    <!-- Hidden Field for CourseId -->
+    <div class="form-group mb-3">
+        <input type="hidden" asp-for="CourseId" />
+        <span asp-validation-for="CourseId" class="text-danger"></span>
+    </div>
+
+    <!-- Read-only Field for CourseName -->
+    <div class="form-group mb-3">
+        <label asp-for="CourseName" class="form-label">Course Name</label>
+        <input asp-for="CourseName" class="form-control" readonly />
+        <span asp-validation-for="CourseName" class="text-danger"></span>
+    </div>
+
+    <!-- Hidden Field for StudentId -->
+    <div class="form-group mb-3">
+        <input type="hidden" asp-for="StudentId" />
+        <span asp-validation-for="StudentId" class="text-danger"></span>
+    </div>
+
+    <!-- Read-only Field for StudentName -->
+    <div class="form-group mb-3">
+        <label asp-for="StudentName" class="form-label">Student Name</label>
+        <input asp-for="StudentName" class="form-control" readonly />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+    </div>
+
+    <!-- Hidden Field for EnrollDate -->
+    <div class="form-group mb-3">
+        <input type="hidden" asp-for="EnrollDate" />
+        <span asp-validation-for="EnrollDate" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid gap-2">
+        <input type="submit" value="Enroll" class="btn btn-success" />
+    </div>
+</form>

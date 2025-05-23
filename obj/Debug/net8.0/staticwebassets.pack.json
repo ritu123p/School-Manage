@@ -1,0 +1,373 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\schoool_Management.bundle.scp.css",
+      "PackagePath": "staticwebassets\\schoool_Management.rcj1t8jj24.bundle.scp.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\06bfe0b1-467c-43ad-a13b-36756ed07bbe.jpg",
+      "PackagePath": "staticwebassets\\images\\06bfe0b1-467c-43ad-a13b-36756ed07bbe.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\104922de-20d7-482f-84b9-bc6df48890ad.jpg",
+      "PackagePath": "staticwebassets\\images\\104922de-20d7-482f-84b9-bc6df48890ad.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\136a33ea-fa57-4a3e-84d4-c585a88dca72.jpg",
+      "PackagePath": "staticwebassets\\images\\136a33ea-fa57-4a3e-84d4-c585a88dca72.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\1754944c-cb17-40d1-bd3b-bd5c2f942edc.jpg",
+      "PackagePath": "staticwebassets\\images\\1754944c-cb17-40d1-bd3b-bd5c2f942edc.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\1d85af4e-47d6-4108-bbd0-40faa0a62eea.jpg",
+      "PackagePath": "staticwebassets\\images\\1d85af4e-47d6-4108-bbd0-40faa0a62eea.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\1f3181a5-85ee-440f-91db-fab7ae2d7793.jpg",
+      "PackagePath": "staticwebassets\\images\\1f3181a5-85ee-440f-91db-fab7ae2d7793.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\36d7a4e0-9c21-47af-af9d-bd7a258e4385.jpg",
+      "PackagePath": "staticwebassets\\images\\36d7a4e0-9c21-47af-af9d-bd7a258e4385.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\5bdfb52b-56f8-4440-9155-8be04521b4c5.jpg",
+      "PackagePath": "staticwebassets\\images\\5bdfb52b-56f8-4440-9155-8be04521b4c5.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\828cc297-be3f-48d0-9ae5-3625ad6042ec.jpg",
+      "PackagePath": "staticwebassets\\images\\828cc297-be3f-48d0-9ae5-3625ad6042ec.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\84312298-e713-40bd-96c0-d6554aef9651.jpg",
+      "PackagePath": "staticwebassets\\images\\84312298-e713-40bd-96c0-d6554aef9651.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\886c61e7-f99a-48cf-81ba-0af03841884e.jpg",
+      "PackagePath": "staticwebassets\\images\\886c61e7-f99a-48cf-81ba-0af03841884e.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\9137ee34-17a3-437d-8160-57a7c9f5b951.jpg",
+      "PackagePath": "staticwebassets\\images\\9137ee34-17a3-437d-8160-57a7c9f5b951.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\9282038d-f156-4162-ac15-280681cd7658.jpg",
+      "PackagePath": "staticwebassets\\images\\9282038d-f156-4162-ac15-280681cd7658.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\b0758032-d38d-4ef2-abd4-bbe932f801d8.jpg",
+      "PackagePath": "staticwebassets\\images\\b0758032-d38d-4ef2-abd4-bbe932f801d8.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\b5a4b02e-8038-43dd-8d24-a8563cfd521b.jpg",
+      "PackagePath": "staticwebassets\\images\\b5a4b02e-8038-43dd-8d24-a8563cfd521b.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\b81b114d-07aa-4e9c-9e67-6b198f42096e.jpg",
+      "PackagePath": "staticwebassets\\images\\b81b114d-07aa-4e9c-9e67-6b198f42096e.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\c82a456e-53ec-40c6-ad93-f4970319163d.jpg",
+      "PackagePath": "staticwebassets\\images\\c82a456e-53ec-40c6-ad93-f4970319163d.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\cb136595-1043-4bfe-93c2-dd4b09659614.jpg",
+      "PackagePath": "staticwebassets\\images\\cb136595-1043-4bfe-93c2-dd4b09659614.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\d489390a-5a8e-43e7-a2d9-bad02dd0d355.jpg",
+      "PackagePath": "staticwebassets\\images\\d489390a-5a8e-43e7-a2d9-bad02dd0d355.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\daf23009-57b5-4868-aa55-53621c10d8df.jpg",
+      "PackagePath": "staticwebassets\\images\\daf23009-57b5-4868-aa55-53621c10d8df.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\landing1.jpg",
+      "PackagePath": "staticwebassets\\images\\landing1.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\landing2.jpg",
+      "PackagePath": "staticwebassets\\images\\landing2.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\landing3.jpg",
+      "PackagePath": "staticwebassets\\images\\landing3.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\landing4.jpg",
+      "PackagePath": "staticwebassets\\images\\landing4.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\scott-graham-5fNmWej4tAA-unsplash.jpg",
+      "PackagePath": "staticwebassets\\images\\scott-graham-5fNmWej4tAA-unsplash.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\images\\service-20.jpg",
+      "PackagePath": "staticwebassets\\images\\service-20.jpg"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "G:\\source\\repos\\schoool_Management\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.schoool_Management.props",
+      "PackagePath": "build\\schoool_Management.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.schoool_Management.props",
+      "PackagePath": "buildMultiTargeting\\schoool_Management.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.schoool_Management.props",
+      "PackagePath": "buildTransitive\\schoool_Management.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.schoool_Management.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.schoool_Management.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
